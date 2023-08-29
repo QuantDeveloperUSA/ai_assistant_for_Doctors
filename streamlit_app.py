@@ -27,8 +27,13 @@ def generate_response(input_text):
 
 with st.form('Doctors_form'):
   assistant_text = Context_for_assistant_Prompt + st.text_area('Enter text:', 'What is an Aspirin Good for?')  + Contextualize_the_Assistant_Answer
-  submitted_to_assistant = st.form_submit_button('Ask the Assistant 👨‍💼')
+  #the color of the submit button is blue
+  submitted_to_assistant = st.form_submit_button('Ask the Assistant 👨‍💼', help='Once you write your query, Click on this button')
   if not openai_api_key.startswith('sk-'):
     st.warning('That is not the right Magic word!', icon='⚠')
   if submitted_to_assistant and openai_api_key.startswith('sk-'):
     generate_response(assistant_text)
+
+
+# to change the color of the submit button to green, we can use this code
+# submitted_to_assistant = st.form_submit_button('Ask the Assistant 👨‍💼', help='Click to submit the form')    
