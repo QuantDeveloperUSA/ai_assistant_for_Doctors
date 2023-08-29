@@ -14,7 +14,7 @@ st.title('👨‍⚕️ A.I. Assistant for Doctors')
 
 openai_api_key = st.sidebar.text_input('What is the Magic Word?')
 Context_for_assistant_Prompt = "A Medical doctor is talking to his assistant about a medical task. The doctor asks: "
-Contextualize_the_Assistant_Answer = "The assistant replies: "
+Contextualize_the_Assistant_Answer = "The assistant (who happens to be a Medical PHD with several masters ad deeply understands Medicine for humans) replies: "
 
 
 Context_for_PHD_Prompt = "A Medical Doctor asks his PHD Professor: "
