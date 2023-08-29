@@ -28,10 +28,6 @@ def generate_response(input_text):
 with st.form('Doctors_form'):
   assistant_text = Context_for_assistant_Prompt + st.text_area('Enter text:', 'What is an Aspirin Good for?')  + Contextualize_the_Assistant_Answer
   submitted_to_assistant = st.form_submit_button('Ask the Assistant 👨‍💼')
-
-  PHD_text = Context_for_PHD_Prompt + st.text_area('Enter text:', 'What is an Aspirin Good for?')  + Contextualize_the_PHD_Answer
-  submitted_to_PHD = st.form_submit_button('Ask the PHD Professor 👨‍🏫')
-
   if not openai_api_key.startswith('sk-'):
     st.warning('That is not the right Magic word!', icon='⚠')
   if submitted_to_assistant and openai_api_key.startswith('sk-'):
