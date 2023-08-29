@@ -38,7 +38,7 @@ with st.form('Doctors_form'):
   #the color of the submit button is blue
   submitted_to_assistant = st.form_submit_button('Ask the Assistant 👨‍💼', help='Once you write your query, Click on this button')
   if not openai_api_key.startswith('sk-'):
-    st.warning(openai_api_key + ' is not the right Magic word!', icon='⚠')
+    st.warning( openai_api_key + ' is not the right Magic word!', icon='⚠')
   if submitted_to_assistant and openai_api_key.startswith('sk-'):
     generate_response(assistant_text)
 
