@@ -11,8 +11,16 @@ from langchain.llms import OpenAI
 
 
 st.title('👨‍⚕️ A.I. Assistant for Doctors')
+# openai_api_key will be read preferably from config.txt if the file exists, otherwise, it will be read from the enviroment variable API_TOKEN
+# Open the file config.txt and read the API_TOKEN from it
+try:
+  with open('config.txt') as f:
+    openai_api_key = f.readline()
+except:
+  openai_api_key = st.secrets["API_TOKEN"]
+#openai_api_key = st.sidebar.text_input('What is the Magic Word?')
 
-openai_api_key = st.sidebar.text_input('What is the Magic Word?')
+
 Context_for_assistant_Prompt = "A Medical doctor is talking to his assistant about a medical task. The doctor asks: "
 Contextualize_the_Assistant_Answer = "The assistant (who happens to be a Medical PHD with several masters ad deeply understands Medicine for humans) replies: "
 
