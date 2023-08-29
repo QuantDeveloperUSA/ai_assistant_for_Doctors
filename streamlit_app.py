@@ -11,13 +11,14 @@ from langchain.llms import OpenAI
 st.title('👨‍⚕️ A.I. Assistant for Doctors')
 
 openai_api_key = st.sidebar.text_input('What is the Magic Word?')
-
+Context_Prompt = "A Medical doctor is talking to his professional assistant (who happens to be also a PHD in Medicine), about a medical condition. The doctor asks: "
+Contextualize_the_Answer = "The assistant replies: "
 def generate_response(input_text):
   llm = OpenAI(temperature=0.7, openai_api_key=openai_api_key)
   st.info(llm(input_text))
 
 with st.form('my_form'):
-  text = st.text_area('Enter text:', 'please respond in 20 lines: What is an Aspirin Good for?')
+  text = Context_Prompt + st.text_area('Enter text:', 'What is an Aspirin Good for?')  + Contextualize_the_Answer
   submitted = st.form_submit_button('Submit')
   if not openai_api_key.startswith('sk-'):
     st.warning('That is not the right Magic word!', icon='⚠')
