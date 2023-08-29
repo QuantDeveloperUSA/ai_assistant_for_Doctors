@@ -22,7 +22,7 @@ except:
 
 
 Context_for_assistant_Prompt = "A Medical doctor is talking to his assistant about a medical task. The doctor asks: "
-Contextualize_the_Assistant_Answer = "The assistant (who happens to be a Medical PHD with several masters ad deeply understands Medicine for humans) replies: "
+Contextualize_the_Assistant_Answer = "The assistant (who happens to be a Medical PHD with several masters and deeply understands Human Medicine) replies: "
 
 
 Context_for_PHD_Prompt = "A Medical Doctor asks his PHD Professor: "
