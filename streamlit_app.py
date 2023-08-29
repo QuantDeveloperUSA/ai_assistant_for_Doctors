@@ -44,4 +44,6 @@ with st.form('Doctors_form'):
 
 
 # to change the color of the submit button to green, we can use this code
-# submitted_to_assistant = st.form_submit_button('Ask the Assistant 👨‍💼', help='Click to submit the form')    
+# submitted_to_assistant = st.form_submit_button('Ask the Assistant 👨‍💼', help='Click to submit the form')   
+# to run this app on the cloud, navigate to https://ai-assistant-for-doctors.streamlit.app/
+# to run this app locally, run this command: streamlit run streamlit_app.py 
