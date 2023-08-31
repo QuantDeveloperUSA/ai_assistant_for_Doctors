@@ -1,4 +1,5 @@
-from streamlit_wrapper import streamlit_x as st
+import streamlit as st
+from st_extras import Release_Mode
 from langchain.llms import OpenAI
 # https://github.com/imartinez/privateGPT
 
@@ -21,7 +22,7 @@ if openai_api_key=='':
   openai_api_key = st.sidebar.text_input('OpenAI API Key')
 
 
-st.Release_Mode()
+Release_Mode()
 
 
 
