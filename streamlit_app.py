@@ -31,7 +31,7 @@ def generate_response(input_text):
   st.info(llm(input_text))
 
 with st.form('Doctors_form'):
-  assistant_text = Context_for_assistant_Prompt + st.text_area('Enter text:', 'What is an Aspirin Good for?')  + Contextualize_the_Assistant_Answer
+  assistant_text = Context_for_assistant_Prompt + st.text_area('Enter text:', 'What is an Aspirin Good for, in real life?')  + Contextualize_the_Assistant_Answer
   #the color of the submit button is blue
   submitted_to_assistant = st.form_submit_button('Ask the Assistant 👨‍💼', help='Once you write your query, Click on this button')
   if not openai_api_key.startswith('sk-'):
