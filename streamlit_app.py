@@ -20,18 +20,20 @@ except:
 if openai_api_key=='':
   openai_api_key = st.sidebar.text_input('OpenAI API Key')
 
+
 def Release_Mode():
  # To load the page without the logo, call the link address with ~/+/ at the end of the URL, example https://ai-assistant-for-doctors.streamlit.app/~/+/
- hide_st_style = """
+  hide_st_style = """
               <style>
               #MainMenu {visibility: hidden;}
               footer {visibility: hidden;}
               header {visibility: hidden;}
               </style>
               """
- st.markdown(hide_st_style, unsafe_allow_html=True)
+  st.markdown(hide_st_style, unsafe_allow_html=True)
+# Calling the Release mode function to be commented in non release versions
+Release_Mode()
 
- Release_Mode()
 
 
 Context_for_assistant_Prompt = "A Medical doctor is talking to his assistant about a medical task. The doctor asks: "
