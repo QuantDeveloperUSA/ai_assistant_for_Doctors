@@ -1,14 +1,6 @@
 import streamlit as st
 from langchain.llms import OpenAI
-
-# for a parrot, we can use this character 🦜
-# for a chain, we can use this character 🔗
-# for a doctor, we can use this character 👨‍⚕️
-# for a PHD Professor, we can use this character 👨‍🏫
-# for an assistant, we can use this character 👨‍💼
-# for an Engineer, we can use this character 👨‍🔧
-# for A.I., we can use this character 🤖
-
+# https://github.com/imartinez/privateGPT
 
 st.title('👨‍⚕️ A.I. Assistant for Doctors')
 # openai_api_key will be read preferably from config.txt if the file exists, otherwise, it will be read from the enviroment variable API_TOKEN
@@ -18,6 +10,8 @@ try:
     openai_api_key = f.readline()
 except:
   openai_api_key = st.secrets["API_TOKEN"]
+
+somevar = st.secrets["SuperSecret"]  
 #openai_api_key = st.sidebar.text_input('What is the Magic Word?')
 
 
@@ -47,3 +41,7 @@ with st.form('Doctors_form'):
 # submitted_to_assistant = st.form_submit_button('Ask the Assistant 👨‍💼', help='Click to submit the form')   
 # to run this app on the cloud, navigate to https://ai-assistant-for-doctors.streamlit.app/
 # to run this app locally, run this command: streamlit run streamlit_app.py 
+
+#https://stripe.com/docs/development/quickstart?lang=python
+# https://marketplace.visualstudio.com/items?itemName=seunlanlege.action-buttons
+#https://github.com/Sven-Bo/sell-digitial-products-using-streamlit-stripe
