@@ -9,9 +9,9 @@ try:
   with open('config.txt') as f:
     openai_api_key = f.readline()
 except:
-  openai_api_key = st.secrets["API_TOKEN"]
+  pass  
+openai_api_key = st.secrets["API_TOKEN"]  
 
-somevar = st.secrets["SuperSecret"]  
 #openai_api_key = st.sidebar.text_input('What is the Magic Word?')
 
 
