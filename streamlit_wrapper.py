@@ -1,6 +1,8 @@
 import streamlit 
 
 class streamlit_x(streamlit):
+    def __init__(self):
+        super().__init__(self)
     def Release_Mode(self):
         # To load the page without the logo, call the link address with ~/+/ at the end of the URL, example https://ai-assistant-for-doctors.streamlit.app/~/+/
         hide_st_style = """
