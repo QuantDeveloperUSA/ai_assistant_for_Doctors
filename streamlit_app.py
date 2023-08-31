@@ -7,11 +7,11 @@ st.title('👨‍⚕️ A.I. Assistant for Doctors')
 # Open the file config.txt and read the API_TOKEN from it
 
 openai_api_key = ''
-#try:
-#  with open('config.txt') as f:
-#    openai_api_key = f.readline()
-#except:
-#  pass
+try:
+  with open('config.txt') as f:
+    openai_api_key = f.readline()
+except:
+  pass
 #try:
 #  if openai_api_key == '': 
 #    openai_api_key = st.secrets["API_TOKEN"]  
