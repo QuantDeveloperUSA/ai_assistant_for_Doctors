@@ -12,11 +12,11 @@ try:
     openai_api_key = f.readline()
 except:
   pass
-#try:
-#  if openai_api_key == '': 
-#    openai_api_key = st.secrets["API_TOKEN"]  
-#except:
-#  pass
+try:
+  if openai_api_key == '': 
+    openai_api_key = st.secrets["API_TOKEN"]  
+except:
+  pass
 if openai_api_key=='':
   openai_api_key = st.sidebar.text_input('OpenAI API Key')
 
