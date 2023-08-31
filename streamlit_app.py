@@ -7,11 +7,11 @@ st.title('👨‍⚕️ A.I. Assistant for Doctors')
 # Open the file config.txt and read the API_TOKEN from it
 
 openai_api_key = ''
-try:
-  with open('config.txt') as f:
-    openai_api_key = f.readline()
-except:
-  pass
+#try:
+#  with open('config.txt') as f:
+#    openai_api_key = f.readline()
+#except:
+#  pass
 #try:
 #  if openai_api_key == '': 
 #    openai_api_key = st.secrets["API_TOKEN"]  
@@ -25,11 +25,6 @@ if openai_api_key=='':
 
 Context_for_assistant_Prompt = "A Medical doctor is talking to his assistant about a medical task. The doctor asks: "
 Contextualize_the_Assistant_Answer = "The assistant (who happens to be a Medical PHD with several masters and deeply understands Human Medicine) replies: "
-
-
-Context_for_PHD_Prompt = "A Medical Doctor asks his PHD Professor: "
-Contextualize_the_PHD_Answer = "The PHD Professor replies: "
-
 
 def generate_response(input_text):
   llm = OpenAI(temperature=0.7, openai_api_key=openai_api_key)
