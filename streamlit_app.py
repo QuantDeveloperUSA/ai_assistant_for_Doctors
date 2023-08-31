@@ -5,12 +5,20 @@ from langchain.llms import OpenAI
 st.title('👨‍⚕️ A.I. Assistant for Doctors')
 # openai_api_key will be read preferably from config.txt if the file exists, otherwise, it will be read from the enviroment variable API_TOKEN
 # Open the file config.txt and read the API_TOKEN from it
+
+openai_api_key = ''
 try:
   with open('config.txt') as f:
     openai_api_key = f.readline()
 except:
-  pass  
-openai_api_key = st.secrets["API_TOKEN"]  
+  pass
+#try:
+#  if openai_api_key == '': 
+#    openai_api_key = st.secrets["API_TOKEN"]  
+#except:
+#  pass
+if openai_api_key=='':
+  openai_api_key = st.sidebar.text_input('OpenAI API Key')
 
 #openai_api_key = st.sidebar.text_input('What is the Magic Word?')
 
