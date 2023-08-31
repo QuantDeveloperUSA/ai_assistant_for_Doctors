@@ -1,4 +1,4 @@
-import streamlit as st
+from streamlit_wrapper import streamlit_x as st
 from langchain.llms import OpenAI
 # https://github.com/imartinez/privateGPT
 
@@ -21,18 +21,7 @@ if openai_api_key=='':
   openai_api_key = st.sidebar.text_input('OpenAI API Key')
 
 
-def Release_Mode():
- # To load the page without the logo, call the link address with ~/+/ at the end of the URL, example https://ai-assistant-for-doctors.streamlit.app/~/+/
-  hide_st_style = """
-              <style>
-              #MainMenu {visibility: hidden;}
-              footer {visibility: hidden;}
-              header {visibility: hidden;}
-              </style>
-              """
-  st.markdown(hide_st_style, unsafe_allow_html=True)
-# Calling the Release mode function to be commented in non release versions
-Release_Mode()
+st.Release_Mode()
 
 
 
@@ -44,7 +33,7 @@ def generate_response(input_text):
   st.info(llm(input_text))
 
 with st.form('Doctors_form'):
-  assistant_text = Context_for_assistant_Prompt + st.text_area('Enter text:', 'What is an Aspirin Good for, in real life?')  + Contextualize_the_Assistant_Answer
+  assistant_text = Context_for_assistant_Prompt + st.text_area('Enter text:', 'What is an Aspirin Good for?')  + Contextualize_the_Assistant_Answer
   #the color of the submit button is blue
   submitted_to_assistant = st.form_submit_button('Ask the Assistant 👨‍💼', help='Once you write your query, Click on this button')
   if not openai_api_key.startswith('sk-'):
