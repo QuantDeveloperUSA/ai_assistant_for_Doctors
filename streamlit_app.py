@@ -1,5 +1,5 @@
 import streamlit as st
-from st_extras import Release_Mode
+from streamlit_extras import Release_Mode
 from langchain.llms import OpenAI
 # https://github.com/imartinez/privateGPT
 
